@@ -1,0 +1,8 @@
+/* eslint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+   @apply border rounded border-black p-1 h-12;
+}
