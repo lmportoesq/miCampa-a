@@ -4,7 +4,7 @@ import CreateCampaign from '../components/CreateCampaign';
 
 function CampaignPage() {
     return (
-        <div className='container mx-auto w-3/4 mt-5'>
+        <div className='container mx-auto w-3/4'>
             <GetHome />
             <CreateCampaign />
             <Footer />
