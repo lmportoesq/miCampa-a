@@ -1,7 +1,7 @@
 function CreateCampaign() {
     return (
-        <div className='container mx-auto w-3/4 mt-10'>
-            <form className='shadow-lg shadow-blue-900 mt-5 border-red-300 w-[32rem] h-[30rem] mx-auto my-auto grid grid-col-1 gap-3 text-center p-5 rounded-lg'>
+        <div className='container mx-auto mt-5'>
+            <form className='shadow-lg shadow-blue-900 border-red-300 w-[32rem] h-[30rem] mx-auto my-auto grid grid-col-1 gap-3 text-center p-5 rounded-lg'>
                 <h1 className='shadow-md'>Datos de la campaña</h1>
                 <input className='border rounded border-black p-1' type="text" placeholder="Nombre del candidato"/>
                 <input className='border rounded border-black p-1' type="text" placeholder="Slogan de la campaña"/>
