@@ -2,7 +2,7 @@ import MenuQueries from '../components/MenuQueries';
 import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function Follwers() {
+function FollwersPage() {
     const dataFollowers = [
         {
             "cedula": "73154812",
@@ -65,4 +65,4 @@ function Follwers() {
         </div>
     )
 }
-export default Follwers;
+export default FollwersPage;

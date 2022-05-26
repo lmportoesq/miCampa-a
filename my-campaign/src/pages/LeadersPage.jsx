@@ -1,68 +1,22 @@
-import MenuQueries from '../components/MenuQueries';
-import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import logo from '../images/Logo.jpg';
 
-function Leaders() {
-    const dataLeaders = [
-        {
-            "cedula": "73154812",
-            "nombre": "Luis Miguel",
-            "ciudad": "Cartagena",
-            "municipio": "Turbaco",
-            "mesa": "23"
-        },
-        {
-            "cedula": "73154856",
-            "nombre": "Jose Perez",
-            "ciudad": "Cartagena",
-            "municipio": "Arjona",
-            "mesa": "2"
-        },
-        {
-            "cedula": "22729384",
-            "nombre": "Claudia Puerta",
-            "ciudad": "Barranquilla",
-            "municipio": "Luruaco",
-            "mesa": "18"
-        },
-        {
-            "cedula": "2567890",
-            "nombre": "Pedro Moreno",
-            "ciudad": "Cartagena",
-            "municipio": "Arjona",
-            "mesa": "2"
-        }
-    ]
-
+function LeadersPage({data}) {
     return (
-        <div className='text-center mx-2'>
-            <MenuQueries />
-            <h1 className='shadow-md'>Listado de líderes</h1>
-            <table className='table table-dark'>
-                <thead>
-                    <tr>
-                        <th>Cédula</th>
-                        <th>Nombre</th>
-                        <th>Ciudad</th>
-                        <th>Municipio</th>
-                        <th>Mesa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {dataLeaders.map((item) => (
-                        <tr>
-                            <td>{item.cedula}</td>
-                            <td>{item.nombre}</td>
-                            <td>{item.ciudad}</td>
-                            <td>{item.municipio}</td>
-                            <td>{item.mesa}</td>
-                        </tr>
-                    ))};
-                </tbody>
-            </table>
-            <h2 className='text-right'>Total líderes: {dataLeaders.length}</h2>            
-            <Footer />
+        <div className='mx-2'>
+            <div className='rounded shadow-lg p-2 grid grid-col-2 bg-blue-100'>
+                <div>
+                    <img src={logo} alt='logo' className='w-full'  />
+                </div>
+                <div>
+                    <h1>{data.nombre}</h1>
+                    <h2>Cédula: {data.cedula}</h2>
+                    <h2>Direción: {data.direccion}</h2>
+                    <h2>Teléfono: {data.telefono}</h2>
+                    <h2>Tipo de líder: {data.tipo}</h2>
+                </div>
+            </div>
         </div>
     )
 }
-export default Leaders;
+export default LeadersPage;
