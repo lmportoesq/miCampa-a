@@ -6,9 +6,9 @@ function HomePage() {
     return (
         <>
             <Menu />
-            <div className='container w-3/4 h-[24rem] mx-auto'>
-                <div className='w-[32rem] h-[24rem] mx-auto my-auto'>
-                    <img src={logo} alt='logo' className='w-full h-[24rem] mt-10' />
+            <div className='container h-[24rem] mx-auto'>
+                <div className='w-[32rem] mx-auto my-auto'>
+                    <img src={logo} alt='logo' className='w-full h-[28rem] mt-10' />
                 </div>
             </div>
             <Footer />

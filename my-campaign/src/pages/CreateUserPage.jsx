@@ -4,7 +4,7 @@ import CreateUsers from '../components/CreateUsers';
 
 function CreateUserPage() {
     return (
-        <div className='container mx-auto w-3/4 mt-5'>
+        <div className='container mx-auto'>
             <GetHome />
             <CreateUsers />
             <Footer />
