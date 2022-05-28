@@ -11,7 +11,6 @@ function CreateCampaign() {
     const handleValidate = () => {
         const { name, slogan, adress, phone} = data;
         const valido = !name.length || !slogan.length || !adress.length || !phone.length;
-        console.log('Estado de valido es...',valido)
         return valido;
     };
 

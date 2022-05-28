@@ -10,7 +10,6 @@ function CreateUser() {
     const handleValidate = () => {
         const { name, lastname, email } = data;
         const valido = !name.length || !lastname.length || !email.length;
-        console.log('Estado de valido es...',valido)
         return valido;
     };
 
@@ -19,7 +18,6 @@ function CreateUser() {
             ...data,
             [e.target.name]: e.target.value,
         });
-        console.log('Alguien escribe...', data);
     }
     
     return (
