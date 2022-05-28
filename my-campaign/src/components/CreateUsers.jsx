@@ -6,7 +6,7 @@ function CreateUser() {
         lastname:'',
         email:'',
     });
-    console.log('Contenido de data',data)
+   
     const handleValidate = () => {
         const { name, lastname, email } = data;
         const valido = !name.length || !lastname.length || !email.length;
@@ -14,13 +14,13 @@ function CreateUser() {
         return valido;
     };
 
-    const handleChange = (e) => {
+    function handleChange(e) {
         setData({
-          ...data,
-          [e.target.name]: e.target.value,
+            ...data,
+            [e.target.name]: e.target.value,
         });
-        console.log('Alguien escribe...',data)
-    };
+        console.log('Alguien escribe...', data);
+    }
     
     return (
         <div className='container mx-auto w-3/4 mt-5'>

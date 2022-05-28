@@ -6,9 +6,8 @@ function CreateCampaign() {
         slogan:'',
         adress:'',
         phone:'',
-        type:'',
     });
-    console.log('Contenido de data',data)
+
     const handleValidate = () => {
         const { name, slogan, adress, phone} = data;
         const valido = !name.length || !slogan.length || !adress.length || !phone.length;
