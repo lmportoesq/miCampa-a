@@ -49,6 +49,7 @@ function CreateUser() {
                 <h1 className='shadow-md '>Registro de líderes</h1>
                 <input className='border rounded border-black p-1' name="firstName" type="text" placeholder="Primer nombre" onChange={handleChange}/>
                 <input className='border rounded border-black p-1' name="lastName" type="text" placeholder="Segundo nombre" onChange={handleChange}/>
+
                 <input className='border rounded border-black p-1' name="email" type="email" placeholder="Email" onChange={handleChange}/>
                 <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit" disabled={handleValidate()}>Enviar</button>
             </form>

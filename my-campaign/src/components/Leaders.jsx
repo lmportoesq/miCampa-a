@@ -47,7 +47,7 @@ function Leaders() {
         <>
             <MenuQueries />
             <h1 className='shadow-md text-center'>Listado de líderes</h1>
-            <div className='grid grid-cols-4 gap-2' >
+            <div className='grid grid-cols-4 gap-2 border-black' >
                 {dataLeaders.map(item => (
                     <LeadersPage
                         key={item.cedula}
@@ -55,7 +55,7 @@ function Leaders() {
                     />
                 ))};
             </div>
-            <h2 className='text-right'>Total líderes: {dataLeaders.length}</h2>
+            <h3 className='text-right'>Total líderes: {dataLeaders.length}</h3>
             <Footer />
         </>
     )
