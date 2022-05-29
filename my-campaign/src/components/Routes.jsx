@@ -10,8 +10,8 @@ function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/login' element={<LoginPage />} />
+                <Route path='/' element={<LoginPage />} />
+                <Route path='/home' element={<HomePage />} />
                 <Route path='/create-campaign' element={<CampaignPage />} />
                 <Route path='/create-leader' element={<CreateUsers />} />
                 <Route path='/query-leader' element={<Leaders />} />
