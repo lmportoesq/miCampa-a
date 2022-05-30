@@ -1,4 +1,4 @@
-import MenuQueries from '../components/MenuQueries';
+import GetHome from '../components/GetHome';
 import Footer from '../components/Footer';
 
 import LeadersPage from '../pages/LeadersPage';
@@ -45,7 +45,7 @@ function Leaders() {
 
     return (
         <>
-            <MenuQueries />
+            <GetHome />
             <h1 className='shadow-md text-center'>Listado de líderes</h1>
             <div className='grid grid-cols-4 gap-2 border-black' >
                 {dataLeaders.map(item => (
