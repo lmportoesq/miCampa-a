@@ -1,6 +1,6 @@
 function GetHome() {
     function handleClick(){
-        window.location.href = '/home';
+        window.history.back();
     }
     return (
         <div className="bg-gray-200 text-right mx-auto">
