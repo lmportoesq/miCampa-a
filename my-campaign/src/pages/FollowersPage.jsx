@@ -1,4 +1,4 @@
-import MenuQueries from '../components/MenuQueries';
+import GetHome from '../components/GetHome';
 import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -36,7 +36,7 @@ function FollwersPage() {
 
     return (
         <div className='text-center mx-2'>
-            <MenuQueries />
+            <GetHome />
             <h1 className='shadow-md'>Listado de seguidores</h1>
             <table className='table table-dark'>
                 <thead>
