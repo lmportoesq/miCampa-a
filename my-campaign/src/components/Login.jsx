@@ -37,6 +37,7 @@ function Login() {
             console.log('El role es ...',profile.role)
 
             localStorage.setItem('token', token);
+            localStorage.setItem('profile', profile);
             //dispatch(saveAdminData({ profile, id }));
             if (response.status === 401) {
                 Swal.fire({
