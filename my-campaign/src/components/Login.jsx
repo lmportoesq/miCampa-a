@@ -20,7 +20,7 @@ function Login() {
         });
     }
     //const API_URL=process.env.REACT_APP_URL;
-    const API_URL='http://localhost:8080'
+    const API_URL = 'http://localhost:8080'
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -31,30 +31,37 @@ function Login() {
                 },
                 body: JSON.stringify(data),
             });
-            
-            const { token, profile, id } = await response.json();
-            console.log('El token es ...',token)
-            console.log('El role es ...',profile.role)
 
-            localStorage.setItem('token', token);
-            localStorage.setItem('profile', profile);
-            //dispatch(saveAdminData({ profile, id }));
+            const { token, profile, id } = await response.json();
+
             if (response.status === 401) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Algo salió mal',
                     text: 'Usuario o contraseña no válida...',
                 });
-            } else {
+                return;
+            }
+
+            if (response.status === 200) {
+                localStorage.setItem('token', token);
+                localStorage.setItem('profile', profile);
+
                 Swal.fire(
                     'Login exitoso ',
                     'Usuario autenticado corréctamente...!',
                     'success',
                 );
-                window.location.href = '/home';
-                //profile.role === 'admin' ? navigate('/AdminPage') : navigate('/Search');
+                
+                if (profile.role === 'owner') {
+                    window.location.href = '/home-owner';
+                } else if (profile.role === 'admin') {
+                    window.location.href = '/home-admin';
+                } else {
+                    window.location.href = '/home-user';
+                }
             }
-            // setShowForm(false);
+
         } catch (error) {
             console.log(error);
         }

@@ -1,4 +1,4 @@
-function Menu() {
+function MenuOwner() {
     function handleClickCampañas(){
         window.location.href = '/create-campaign';
     }
@@ -14,4 +14,4 @@ function Menu() {
         </div>
     )
 }
-export default Menu;
+export default MenuOwner;
