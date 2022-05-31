@@ -9,8 +9,9 @@ export async function createCampaign(campaign) {
     headers: {
       'Content-type': 'application/json',
     },
-    body: JSON.stringify(campaign)
+    body: JSON.stringify(campaign),
   };
+  console.log('Este es el Payload:',payload)
   try {
     const response = await fetch(`${API_URL}/api/campaigns`, payload);
     console.log('REsultado del fetch es..',response)
