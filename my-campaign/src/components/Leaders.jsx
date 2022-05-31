@@ -2,60 +2,35 @@ import GetHome from '../components/GetHome';
 import Footer from '../components/Footer';
 
 import LeadersPage from '../pages/LeadersPage';
+import clienteAxios from '../config/axios';
+import { useEffect, useState } from 'react';
 
 function Leaders() {
-    const dataLeaders = [
-        {
-            "cedula": "73154812",
-            "nombre": "Luis Miguel",
-            "ciudad": "Cartagena",
-            "municipio": "Turbaco",
-            "direccion": "Av. 45 No.1845",
-            "telefono": "316-9997654",
-            "tipo": "concejal"
-        },
-        {
-            "cedula": "73154856",
-            "nombre": "Jose Perez",
-            "ciudad": "Cartagena",
-            "municipio": "Arjona",
-            "direccion": "Cra. 25 No.1845",
-            "telefono": "312-9878654",
-            "tipo": "concejal"
-        },
-        {
-            "cedula": "22729384",
-            "nombre": "Claudia Puerta",
-            "ciudad": "Barranquilla",
-            "municipio": "Luruaco",
-            "direccion": "Cra. 18 No.18-45",
-            "telefono": "3300-9878654",
-            "tipo": "concejal"
-        },
-        {
-            "cedula": "2567890",
-            "nombre": "Pedro Moreno",
-            "ciudad": "Cartagena",
-            "municipio": "Arjona",
-            "direccion": "Cra. 2 No.2-45",
-            "telefono": "312-1178654",
-            "tipo": "comunal"
-        }
-    ]
+    const [data, setData] = useState([]);
+
+    const consultarAPI = async ()=>{
+        const consultaClientes = await clienteAxios.get('/api/users')
+        const data = consultaClientes.data;
+        setData(data);
+    }
+    
+    useEffect(()=>{
+        consultarAPI();
+    },[]);
 
     return (
         <>
             <GetHome />
             <h1 className='shadow-md text-center'>Listado de líderes</h1>
             <div className='grid grid-cols-4 gap-2 border-black' >
-                {dataLeaders.map(item => (
+                {data.map(item => (
                     <LeadersPage
-                        key={item.cedula}
+                        key={item._id}
                         data={item}
                     />
                 ))};
             </div>
-            <h3 className='text-right'>Total líderes: {dataLeaders.length}</h3>
+            <h3 className='text-right'>Total líderes: {data.length}</h3>
             <Footer />
         </>
     )
