@@ -1,6 +1,6 @@
 //const API_URL = process.env.REACT_APP_URL;
 const API_URL = 'http://localhost:8080';
-console.log('La ruta a la API es..',API_URL)
+
 export async function createUser(user) {
  
   const payload = {
