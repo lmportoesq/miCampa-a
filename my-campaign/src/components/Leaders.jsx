@@ -30,7 +30,7 @@ function Leaders() {
                     />
                 ))};
             </div>
-            <h3 className='text-right'>Total líderes: {data.length}</h3>
+            <h3 className='text-right mr-2'>Total líderes: {data.length}</h3>
             <Footer />
         </>
     )

@@ -31,9 +31,9 @@ function Login() {
                 },
                 body: JSON.stringify(data),
             });
-
+            console.log('El contenido de data es..',data)
             const { token, profile, id } = await response.json();
-
+            console.log('El contenido de response es..',response)
             if (response.status === 401) {
                 Swal.fire({
                     icon: 'error',
@@ -46,6 +46,7 @@ function Login() {
             if (response.status === 200) {
                 localStorage.setItem('token', token);
                 localStorage.setItem('profile', profile);
+                //localStorage.setItem('id', id);
 
                 Swal.fire(
                     'Login exitoso ',
