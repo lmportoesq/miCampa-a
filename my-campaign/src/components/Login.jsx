@@ -46,7 +46,7 @@ function Login() {
             if (response.status === 200) {
                 localStorage.setItem('token', token);
                 localStorage.setItem('profile', profile);
-                //localStorage.setItem('id', id);
+                localStorage.setItem('id', id);
 
                 Swal.fire(
                     'Login exitoso ',

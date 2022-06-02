@@ -63,4 +63,4 @@ function CreateLeader() {
         </div>
     )
 }
-export default CreateCampaign;
+export default CreateLeader;
