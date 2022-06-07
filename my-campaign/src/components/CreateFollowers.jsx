@@ -6,17 +6,17 @@ function CreateFollower() {
     const leaderID = localStorage.getItem('id');
     const [data, setData] = useState({
         docIdent: '',
-        firstName:'',
-        lastName:'',
+        firstName: '',
+        lastName: '',
         adress: '',
         phoneNumber: '',
-        votingTable:'',
+        votingTable: '',
         leader: leaderID
     });
 
     const handleValidate = () => {
         const { docIdent, firstName, lastName, phoneNumber, adress, votingTable } = data;
-        const valido = !docIdent.length || !firstName.length || !lastName.length ||  !phoneNumber.length || !adress.length || !votingTable.length;
+        const valido = !docIdent.length || !firstName.length || !lastName.length || !phoneNumber.length || !adress.length || !votingTable.length;
         return valido;
     };
 
@@ -26,25 +26,32 @@ function CreateFollower() {
             [e.target.name]: e.target.value,
         });
     }
-    const API_URL = 'http://localhost:8080'
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await clienteAxios.post('/api/followers', data)
-            .then(res => {
-                if (res.status === 201) {
-                    Swal.fire(
-                        'Se agregaron los datos de la campaña corréctamente ',
-                        res.data.mensaje,
-                        'success',
-                    );
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Algo salió mal',
-                        text: 'Documento ya fue registrado...',
-                    });
-                }
-            })
+        try {
+            const res = await clienteAxios.post('/api/followers', data)
+            if (res.status === 201) {
+                Swal.fire(
+                    'Se agregaron los datos de la campaña corréctamente ',
+                    res.data.mensaje,
+                    'success',
+                );
+            }
+        } catch (error) {
+            saveRejected();
+            Swal.fire({
+                icon: 'error',
+                title: 'Algo salió mal',
+                text: 'Documento ya fue registrado...',
+            });
+        }
+    }
+    const saveRejected = async (e) => {
+        try {
+            const res = await clienteAxios.post('api/rejecteds', data)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
