@@ -9,7 +9,7 @@ function RejectedPage() {
     const [data, setData] = useState([]);
     const idLeader = localStorage.getItem('id');
     const consultarAPI = async () => {
-        const consultaRechazados = await clienteAxios.get(`/api/rejected?leader=${idLeader}`)
+        const consultaRechazados = await clienteAxios.get(`/api/rejecteds?leader=${idLeader}`)
         const data = consultaRechazados.data;
         setData(data);
     }
