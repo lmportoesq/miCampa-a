@@ -8,6 +8,11 @@ function MenuUsers() {
     function handleClickListFollowers(){
         window.location.href = '/query-followers'
     }
+
+    function handleClickListRejected(){
+        window.location.href = '/query-rejected'
+    }
+
     function handleClickLogout(){
         localStorage.removeItem('token');
         window.location.href = '/';
@@ -18,7 +23,7 @@ function MenuUsers() {
             <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit" onClick={handleClickPersonal} >Datos personales</button>
             <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit" onClick={handleClickFollower}>Ingresar seguidores</button>
             <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit" onClick={handleClickListFollowers}>Listar seguidores</button>
-            <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit">Listar rechazados</button>
+            <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit" onClick={handleClickListRejected}>Listar rechazados</button>
             <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit" onClick={handleClickLogout}>Salir</button>
         </div>
     )

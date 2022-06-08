@@ -9,6 +9,7 @@ import CreateFollowerPage from '../pages/CreateFollowersPage';
 import LoginPage from '../pages/LoginPage';
 import Leaders from '../components/Leaders';
 import FollowersPage from '../pages/FollowersPage';
+import RejectedPage from  '../pages/RejectedPage';
 
 function Router() {
     return (
@@ -24,6 +25,7 @@ function Router() {
                 <Route path='/create-follower' element={<CreateFollowerPage />} />
                 <Route path='/query-leader' element={<Leaders />} />
                 <Route path='/query-followers' element={<FollowersPage />} />
+                <Route path='/query-rejected' element={<RejectedPage />} />
             </Routes>
         </BrowserRouter>
     )
