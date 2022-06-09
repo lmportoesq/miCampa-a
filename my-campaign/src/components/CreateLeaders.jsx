@@ -48,7 +48,7 @@ function CreateLeader() {
             .then(res => {
                 if (res.status === 201) {
                     Swal.fire(
-                        'Se agregaron los datos de la campaña corréctamente ',
+                        'Se agregaron los datos del líder corréctamente ',
                         res.data.mensaje,
                         'success',
                     );

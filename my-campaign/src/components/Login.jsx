@@ -19,7 +19,6 @@ function Login() {
             [e.target.name]: e.target.value,
         });
     }
-    //const API_URL=process.env.REACT_APP_URL;
     const API_URL = 'http://localhost:8080'
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,9 +30,7 @@ function Login() {
                 },
                 body: JSON.stringify(data),
             });
-            console.log('El contenido de data es..',data)
             const { token, profile, id } = await response.json();
-            console.log('El contenido de response es..',response)
             if (response.status === 401) {
                 Swal.fire({
                     icon: 'error',
