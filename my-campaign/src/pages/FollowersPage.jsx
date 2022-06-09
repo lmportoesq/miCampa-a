@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import clienteAxios from '../config/axios';
 import { useEffect, useState } from 'react';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+//import 'bootstrap/dist/css/bootstrap.min.css'
 
 function FollowersPage() {
     const [data, setData] = useState([]);
