@@ -25,22 +25,24 @@ function CreateCampaign() {
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        await clienteAxios.post('/api/campaigns',data)
-        .then (res=>{
-            if (res.data.code === 11000) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Algo salió mal',
-                    text: 'Error del servidor...',
-                });
-            }else {
+        try {
+            const res = await clienteAxios.post('/api/campaigns', data)
+            console.log('La respuesta es...',res)
+            if (res.status === 201) {
                 Swal.fire(
                     'Se agregaron los datos de la campaña corréctamente ',
                     res.data.mensaje,
                     'success',
                 );
             }
-        })
+        } catch (error) {
+            saveRejected();
+            Swal.fire({
+                icon: 'error',
+                title: 'Algo salió mal',
+                text: 'Error..',
+            });
+        }
     }
 
     return (

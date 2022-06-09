@@ -32,7 +32,7 @@ function CreateFollower() {
             const res = await clienteAxios.post('/api/followers', data)
             if (res.status === 201) {
                 Swal.fire(
-                    'Se agregaron los datos de la campaña corréctamente ',
+                    'Se agregaron los datos del seguidor corréctamente ',
                     res.data.mensaje,
                     'success',
                 );
