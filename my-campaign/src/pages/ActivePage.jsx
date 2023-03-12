@@ -1,3 +1,7 @@
+import {useParams,useNavigate} from 'react-router-dom';
+import {useEffect} from 'react';
+const API_URL='http://localhost:8080';
+
 function Active(){
     const {token}=useParams;
     const navigate=useNavigate;
