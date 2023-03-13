@@ -14,7 +14,7 @@ function Active(){
         }
     }
     useEffect(()=>{
-        Active();
+        active();
     },[]);
     
     return(
