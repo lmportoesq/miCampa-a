@@ -1,5 +1,6 @@
 import {useParams,useNavigate} from 'react-router-dom';
 import {useEffect} from 'react';
+import Welcome from '../components/Welcome';
 const API_URL='http://localhost:3000';
 
 function Active(){
@@ -10,7 +11,7 @@ function Active(){
         const data=await response.json();
         if(data.token){
             localStorage.setItem('token',data.token);
-            navigate('/login')
+            navigate('/')
         }
     }
     useEffect(()=>{
@@ -19,7 +20,7 @@ function Active(){
     
     return(
         <div>
-            Bienvenido
+            <Welcome />
         </div>
     );
 }
