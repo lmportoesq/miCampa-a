@@ -19,7 +19,7 @@ function Welcome() {
                         Bienvenido a My Campaign...!
                     </h1>
                     <p>
-                        Su cuenta de usuario se ha creada con éxito, sólo resta completar el resto de su información personal y asignar
+                        Su cuenta de usuario se ha creada con éxito, sólo falta completar el resto de su información personal y asignar
                         su contraseña de ingreso. Por favor de clic en el botón "Aceptar" para continuar.
                     </p>
                 </div>

@@ -3,7 +3,7 @@ import Login from '../components/Login';
 
 function LoginPage() {
     return (
-        <div className='container mx-auto'>
+        <div>
             <Login />
             <Footer />
         </div>
