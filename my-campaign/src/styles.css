@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+section{
+  /*background-color: aqua;*/
+  background-position: center;
+
+  width: 1360px;
+  height: 610px;
+  border-color: red;
+}
+.section_fondo{
+  width: 100%;
+  height: 100%;
+
+}
+.card{
+  background: black;
+  width: 400px;
+  height: 550px;
+  padding: 1rem;
+  background-color: #141313;;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: white;
+  border-radius: 15px;
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+}
+.card_header{
+  width: 100%;
+  
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+.card_header__logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 120px;
+  border-color: red;
+}
+.card_section{
+  padding: 5px;
+  overflow: hidden;
+  text-align: center;
+}
+.card_section h2{
+  margin: .5em 0;
+}
+.form{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background: #eff0f1;
+}
+.input_text{
+  background-color: #fefefe;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: .5rem 1rem;
+  width: 100%;
+}
+.button__send{
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: .5rem 1rem;
+  height: 40px;
+  
+}
+.card_footer{
+  width: 100%;
+  height: 60px;
+  margin-top: 4rem;
+  background: #012941;
+  border-color: red;
+  color: white;
+  position: relative;
+}
+.card_footer::before{
+  content: '';
+  position: absolute;
+  border-bottom: 30px solid transparent;
+  border-right: 400px solid white;
+  top: 0px;
+}
+.card_footer h3{
+  padding: .2rem;
+  font-family:'Edwardian Script ITC', Courier, monospace;
+  font-size: 40px;
+  text-align: center;
+}
+
+.link{
+  width: 100%;
+  border-color: red;
+}
+.link a{
+  text-align: right;
+  border-color: red;
+}
+.footer{
+  margin-top: .5rem;
+  padding: .2rem;
+  width: 100%;
+  text-align: center ;
+}

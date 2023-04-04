@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
+import logo from '../images/Logo.jpg';
+import fondo from '../images/fondo4.jpg';
 
 function Login() {
     const [data, setData] = useState({
@@ -50,7 +52,7 @@ function Login() {
                     'Usuario autenticado corréctamente...!',
                     'success',
                 );
-                
+
                 if (profile.role === 'owner') {
                     window.location.href = '/home-owner';
                 } else if (profile.role === 'admin') {
@@ -66,14 +68,26 @@ function Login() {
     };
 
     return (
-        <div className='container mx-auto w-[32rem] h-[34rem]'>
-            <form className='shadow-lg shadow-blue-900 border-red-300 w-[30rem] h-[28rem] mx-auto mt-12 grid grid-col-1 gap-3 text-center p-5 rounded-lg' onSubmit={handleSubmit}>
-                <h1 className='shadow-md '>Login</h1>
-                <input className='border rounded border-black p-1 h-12' name="email" type="email" placeholder="Email" onChange={handleChange} />
-                <input className='border rounded border-black p-1 h-12' name="password" type="password" placeholder="Password" onChange={handleChange} />
-                <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit" disabled={handleValidate()}>Enviar</button>
-            </form>
-        </div>
+        <section className='section'>
+            <img src={fondo} alt='fondo' className="section_fondo" />
+            <div className="card">
+                <div className="card_header">
+                    <img src={logo} alt='logo' className="card_header__logo" />
+                </div>
+                <div className="card_section">
+                    <h2>Login</h2>
+                    <hr />
+                </div>
+                <form className="form" onSubmit={handleSubmit}>
+                    <input className='input_text' name="email" type="email" placeholder="Email" onChange={handleChange} />
+                    <input className='input_text' name="password" type="password" placeholder="Password" onChange={handleChange} />
+                    <button className="button__send" type="submit" disabled={handleValidate()}>Enviar</button>
+                </form>
+                <div className='card_footer'>
+                    <h3>Porto Soluciones</h3>
+                </div>
+            </div>
+        </section>
     )
 }
 export default Login;
