@@ -1,0 +1,38 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 60px;
+    gap: 20px;
+  
+    position: absolute;
+    width: 1118px;
+    height: 470px;
+    left: 120px;
+    top: 78px;
+  
+  }
+  
+  .container__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+  
+    width: 498px;
+    height: 447px;
+  
+    border: 1px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(142, 138, 138, 0.25));
+    border-radius: 16px;
+    
+    /* Inside auto layout */
+  
+      flex: none;
+      order: 0;
+      flex-grow: 1;
+  }
+  

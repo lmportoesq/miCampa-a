@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePageOwner from '../pages/HomePageOwner';
-import HomePageAdmin from '../pages/HomePageAdmin';
+import HomePageAdmin from '../pages/home_page_admin/HomePageAdmin';
 import HomePageUser from '../pages/HomePageUser';
 import CampaignPage from '../pages/CampaignPage';
 import CreateUsersPage from '../pages/CreateUserPage';
 import CreateLeaderPage from '../pages/CreateLeaderPage';
 import CreateFollowerPage from '../pages/CreateFollowersPage';
-import LoginPage from '../pages/LoginPage';
+import LoginPage from '../pages/login_page/LoginPage';
 import Leaders from '../components/Leaders';
 import FollowersPage from '../pages/FollowersPage';
 import RejectedPage from  '../pages/RejectedPage';
