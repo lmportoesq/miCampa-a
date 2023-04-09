@@ -1,7 +1,8 @@
+import './login.css'
 import { useState } from "react";
 import Swal from "sweetalert2";
-import logo from '../images/Logo.jpg';
-import fondo from '../images/fondo4.jpg';
+import logo from '../../images/Logo.jpg';
+import fondo from '../../images/fondo4.jpg';
 
 function Login() {
     const [data, setData] = useState({
@@ -68,26 +69,26 @@ function Login() {
     };
 
     return (
-        <section className='section'>
-            <img src={fondo} alt='fondo' className="section_fondo" />
+        <main className='main'>
+            <img src={fondo} alt='fondo' className="main__image" />
             <div className="card">
-                <div className="card_header">
-                    <img src={logo} alt='logo' className="card_header__logo" />
+                <div className="card__header">
+                    <img src={logo} alt='logo' className="logo" />
                 </div>
-                <div className="card_section">
+                <div className="card__body">
                     <h2>Login</h2>
                     <hr />
+                    <form className="form" onSubmit={handleSubmit}>
+                        <input className='input__text' name="email" type="email" placeholder="Email" onChange={handleChange} />
+                        <input className='input__text' name="password" type="password" placeholder="Password" onChange={handleChange} />
+                        <button className="button__send" type="submit" disabled={handleValidate()}>Enviar</button>
+                    </form>
                 </div>
-                <form className="form" onSubmit={handleSubmit}>
-                    <input className='input_text' name="email" type="email" placeholder="Email" onChange={handleChange} />
-                    <input className='input_text' name="password" type="password" placeholder="Password" onChange={handleChange} />
-                    <button className="button__send" type="submit" disabled={handleValidate()}>Enviar</button>
-                </form>
-                <div className='card_footer'>
+                <div className='card__footer'>
                     <h3>Porto Soluciones</h3>
                 </div>
             </div>
-        </section>
+        </main>
     )
 }
 export default Login;

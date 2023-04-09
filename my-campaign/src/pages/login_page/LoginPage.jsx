@@ -1,5 +1,5 @@
-import Footer from '../components/Footer';
-import Login from '../components/Login';
+import Footer from '../../components/Footer';
+import Login from '../../components/login/Login';
 
 function LoginPage() {
     return (

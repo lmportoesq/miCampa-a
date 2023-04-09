@@ -1,0 +1,106 @@
+.main {
+    background-position: center;
+    width: 1360px;
+    height: 610px;
+  }
+  
+  .main__image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card {
+    overflow: hidden;
+    position: absolute;
+  
+    width: 400px;
+    height: 550px;
+    padding: 1rem;
+  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 15px;
+    box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+  }
+  
+  .card__header {
+    width: 100%;
+  
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 120px;
+    border-color: red;
+  }
+  
+  .card__body {
+    padding: 5px;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .card__body h2 {
+    margin: .5em 0;
+  }
+  
+  .form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: #eff0f1;
+  }
+  
+  .input__text {
+    background-color: #fefefe;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+    width: 100%;
+  }
+  
+  .button__send {
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: .5rem 1rem;
+    height: 40px;
+  
+  }
+  
+  .card__footer {
+    width: 100%;
+    height: 60px;
+  
+    background: #012941;
+    border-color: red;
+    color: white;
+    position: relative;
+  }
+  
+  .card__footer::before {
+    content: '';
+    position: absolute;
+    border-bottom: 30px solid transparent;
+    border-right: 400px solid white;
+    top: 0px;
+  }
+  
+  .card__footer h3 {
+    padding: .2rem;
+    font-family: 'Edwardian Script ITC', Courier, monospace;
+    font-size: 40px;
+    text-align: center;
+  }
+  
