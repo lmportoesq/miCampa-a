@@ -1,4 +1,4 @@
-import Footer from '../../components/Footer';
+import Footer from '../../components/footer/Footer';
 import MenuUsers from '../../components/MenuUsers';
 import logo from '../../images/Logo.jpg';
 

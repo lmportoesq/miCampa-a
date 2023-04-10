@@ -16,22 +16,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-.link {
-  width: 100%;
-  border-color: red;
+.title{
+  font-size: 40px;
+  font-weight: bold;
 }
 
-.link a {
-  text-align: right;
-  border-color: red;
+.subtitle{
+  font-size: 30px;
+  font-weight:bolder;
 }
-
-.footer {
-  margin-top: .5rem;
-  padding: .2rem;
-  width: 100%;
-  text-align: center;
+.paragraph{
+  font-size: 16px;
+  font-weight: lighter;
 }
-

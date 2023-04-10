@@ -1,4 +1,4 @@
-import Footer from '../../components/Footer';
+import Footer from '../../components/footer/Footer';
 import MenuOwner from '../../components/MenuOwner';
 import logo from '../../images/logo_campaña.svg';
 

@@ -1,4 +1,4 @@
-import '../logo/logo.css';
+import './logo.css';
 function Logo() {
     return (
         <div className="container">

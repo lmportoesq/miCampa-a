@@ -12,12 +12,6 @@
     background: #4A0243;
     border-radius: 50px;
     margin-left: 40px;
-  
-    /* Inside auto layout */
-  
-    flex: none;
-    order: 0;
-    flex-grow: 0;
   }
   
   .container__image {
@@ -39,14 +33,6 @@
     text-align: center;
   
     color: #FFF8F8;
-  
-  
-    /* Inside auto layout */
-  
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
   }
   
   .container__text {
@@ -63,12 +49,4 @@
     text-align: center;
   
     color: #FFFFFF;
-  
-  
-    /* Inside auto layout */
-  
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
   }
