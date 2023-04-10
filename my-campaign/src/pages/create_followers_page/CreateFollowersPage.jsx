@@ -1,6 +1,6 @@
-import Footer from '../components/Footer';
-import GetHome from '../components/GetHome';
-import CreateFollowerPage from '../components/CreateFollowers';
+import Footer from '../../components/Footer';
+import GetHome from '../../components/GetHome';
+import CreateFollowerPage from '../../components/CreateFollowers';
 
 function CreateFollower() {
     return (

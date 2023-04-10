@@ -1,7 +1,7 @@
 import GetHome from '../components/GetHome';
 import Footer from '../components/Footer';
 
-import LeadersPage from '../pages/LeadersPage';
+import LeadersPage from '../pages/leaders_page/LeadersPage';
 import clienteAxios from '../config/axios';
 import { useEffect, useState } from 'react';
 

@@ -1,6 +1,6 @@
-import GetHome from '../components/GetHome';
-import Footer from '../components/Footer';
-import clienteAxios from '../config/axios';
+import GetHome from '../../components/GetHome';
+import Footer from '../../components/Footer';
+import clienteAxios from '../../config/axios';
 import { useEffect, useState } from 'react';
 
 //import 'bootstrap/dist/css/bootstrap.min.css'

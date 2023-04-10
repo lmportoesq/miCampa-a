@@ -1,5 +1,5 @@
-import logo from '../images/Logo.jpg';
-import lider from '../images/lider.png';
+
+import lider from '../../images/lider.png';
 
 function LeadersPage({ data }) {
     return (

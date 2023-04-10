@@ -1,6 +1,6 @@
-import Footer from '../components/Footer';
-import GetHome from '../components/GetHome';
-import CreateCampaign from '../components/CreateCampaign';
+import Footer from '../../components/Footer';
+import GetHome from '../../components/GetHome';
+import CreateCampaign from '../../components/CreateCampaign';
 
 function CampaignPage() {
     return (

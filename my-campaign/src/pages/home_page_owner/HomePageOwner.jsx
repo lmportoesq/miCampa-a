@@ -1,6 +1,6 @@
-import Footer from '../components/Footer';
-import MenuOwner from '../components/MenuOwner';
-import logo from '../images/Logo.jpg';
+import Footer from '../../components/Footer';
+import MenuOwner from '../../components/MenuOwner';
+import logo from '../../images/logo_campaña.svg';
 
 function HomePageOwner() {
     console.log('EStoy en la home de OWNER')
