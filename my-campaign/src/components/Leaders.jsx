@@ -1,5 +1,5 @@
 import GetHome from '../components/GetHome';
-import Footer from '../components/Footer';
+import Footer from '../components/footer/Footer';
 
 import LeadersPage from '../pages/leaders_page/LeadersPage';
 import clienteAxios from '../config/axios';

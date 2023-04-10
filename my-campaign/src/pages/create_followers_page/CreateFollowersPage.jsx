@@ -1,4 +1,4 @@
-import Footer from '../../components/Footer';
+import Footer from '../../components/footer/Footer';
 import GetHome from '../../components/GetHome';
 import CreateFollowerPage from '../../components/CreateFollowers';
 
