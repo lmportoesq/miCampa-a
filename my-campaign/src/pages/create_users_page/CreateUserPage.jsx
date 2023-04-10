@@ -1,6 +1,6 @@
-import Footer from '../components/Footer';
-import GetHome from '../components/GetHome';
-import CreateUsers from '../components/CreateUsers';
+import Footer from '../../components/Footer';
+import GetHome from '../../components/GetHome';
+import CreateUsers from '../../components/CreateUsers';
 
 function CreateUserPage() {
     return (

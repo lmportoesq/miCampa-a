@@ -1,6 +1,6 @@
 import {useParams,useNavigate} from 'react-router-dom';
 import {useEffect} from 'react';
-import Welcome from '../components/Welcome';
+import Welcome from '../../components/Welcome';
 const API_URL='http://localhost:3000';
 
 function Active(){

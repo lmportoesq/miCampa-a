@@ -1,6 +1,6 @@
-import Footer from '../components/Footer';
-import GetHome from '../components/GetHome';
-import CreateLeaderPage from '../components/CreateLeaders';
+import Footer from '../../components/Footer';
+import GetHome from '../../components/GetHome';
+import CreateLeaderPage from '../../components/CreateLeaders';
 
 function CreateLeader() {
     return (
