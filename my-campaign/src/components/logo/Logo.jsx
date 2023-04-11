@@ -1,11 +1,11 @@
 import './logo.css';
 function Logo() {
     return (
-        <div className="container">
-            <div className="container__image">
+        <div className="container-logo">
+            <div className="container-logo__image">
                 <p className="logo">MC</p>
             </div>
-            <p className="container__text">Mi campaña</p>
+            <p className="container-logo__text">Mi campaña</p>
         </div>
     )
 }

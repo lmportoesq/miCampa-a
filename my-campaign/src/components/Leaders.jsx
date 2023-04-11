@@ -1,4 +1,4 @@
-import GetHome from '../components/GetHome';
+import GetHome from '../components/get_home/GetHome';
 import Footer from '../components/footer/Footer';
 
 import LeadersPage from '../pages/leaders_page/LeadersPage';
