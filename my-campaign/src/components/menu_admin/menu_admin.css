@@ -1,49 +1,49 @@
-
 .main-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 20px;
-  
-    position: absolute;
-    width: 1380px;
-    height: 64px;
-    left: 0px;
-    top: 0px;
-  
-    background: #e29adb;
-  }
-  
-  
-  .main-nav__list {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0px;
-    gap: 30px;
-  
-    width: 1250px;
-    height: 19px;
-    margin-right: 40px;
-  
-  
-    /* Inside auto layout */
-  
-    flex: none;
-    order: 1;
-    flex-grow: 1;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
 
-  
+  position: absolute;
+  width: 1380px;
+  height: 64px;
+  left: 0px;
+  top: 0px;
+
+  background: #e29adb;
+}
+
+
+.main-nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 30px;
+
+  width: 1250px;
+  height: 19px;
+  margin-right: 40px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+
+
 .button-nav {
-    border-radius: 8px;
-    background-color: aqua;
-    padding: 8px 8px;
-  }
-  
-  .button-nav:hover {
-    background-color: white;
-    font: white;
-  }
+  border-radius: 8px;
+  background-color: aqua;
+  padding: 8px 8px;
+}
+
+
+.button-nav:hover {
+  background-color: white;
+  font: white;
+}

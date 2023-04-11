@@ -1,14 +1,14 @@
 import Footer from '../../components/footer/Footer';
-import GetHome from '../../components/GetHome';
-import CreateCampaign from '../../components/CreateCampaign';
+import GetHome from '../../components/get_home/GetHome';
+import CreateCampaign from '../../components/create_campaign/CreateCampaign';
 
 function CampaignPage() {
     return (
-        <div className='container mx-auto'>
+        <div className='main'>
             <GetHome />
             <CreateCampaign />
             <Footer />
         </div>
-    )    
+    )
 }
 export default CampaignPage;

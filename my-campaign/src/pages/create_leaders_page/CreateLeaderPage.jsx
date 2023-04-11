@@ -1,5 +1,5 @@
 import Footer from '../../components/footer/Footer';
-import GetHome from '../../components/GetHome';
+import GetHome from '../../components/get_home/GetHome';
 import CreateLeaderPage from '../../components/CreateLeaders';
 
 function CreateLeader() {

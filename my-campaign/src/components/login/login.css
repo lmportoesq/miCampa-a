@@ -22,6 +22,7 @@
     transform: translate(-50%, -50%);
     background: white;
     border-radius: 15px;
+    border: 1px solid black;
     box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
   }
   
@@ -53,7 +54,7 @@
     margin: .5em 0;
   }
   
-  .form {
+  .form-login {
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -87,6 +88,7 @@
     border-color: red;
     color: white;
     position: relative;
+    top:60px;
   }
   
   .card__footer::before {
@@ -98,7 +100,7 @@
   }
   
   .card__footer h3 {
-    padding: .2rem;
+    padding: .8rem;
     font-family: 'Edwardian Script ITC', Courier, monospace;
     font-size: 40px;
     text-align: center;

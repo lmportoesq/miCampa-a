@@ -78,7 +78,7 @@ function Login() {
                 <div className="card__body">
                     <h2>Login</h2>
                     <hr />
-                    <form className="form" onSubmit={handleSubmit}>
+                    <form className="form-login" onSubmit={handleSubmit}>
                         <input className='input__text' name="email" type="email" placeholder="Email" onChange={handleChange} />
                         <input className='input__text' name="password" type="password" placeholder="Password" onChange={handleChange} />
                         <button className="button__send" type="submit" disabled={handleValidate()}>Enviar</button>
