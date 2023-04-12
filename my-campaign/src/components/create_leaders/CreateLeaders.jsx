@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-import clienteAxios from '../config/axios';
+import clienteAxios from '../../config/axios';
 
 function CreateLeader() {
     const formData = new FormData();
@@ -10,7 +10,7 @@ function CreateLeader() {
         leaderType: '',
         phoneNumber: '',
         adress: '',
-        photo:'',
+        photo: '',
         user: userID
     });
 
@@ -31,7 +31,7 @@ function CreateLeader() {
         } else {
             const image = e.target.files[0];
             formData.append('file', image);
-         
+
             const result = await clienteAxios.post('/api/upload/image', formData);
             const { url } = result.data;
 
@@ -63,26 +63,42 @@ function CreateLeader() {
     }
 
     return (
-        <div className='container mx-auto mt-5'>
-            <form className='shadow-lg shadow-blue-900 border-red-300 w-[32rem] h-[30rem] mx-auto my-auto grid grid-col-1 gap-3 text-center p-5 rounded-lg' onChange={handleInputChange} onSubmit={handleSubmit}>
-                <h1 className='shadow-md'>Datos del líder</h1>
-                <input className='border rounded border-black p-1' type="number" name="docIdent" placeholder="Cédula No." />
-                <input className='border rounded border-black p-1' type="text" name="adress" placeholder="Dirección"  />
-                <input className='border rounded border-black p-1' type="tel" name="phoneNumber" placeholder="Teléfono"  />
-                <label htmlFor="type">Tipo de líder</label>
-                <select name="leaderType" className='border rounded border-black p-1' >
-                    <option value=""></option>
-                    <option value="Aspirante al concejo">Aspirante al concejo</option>
-                    <option value="Comunitario">Comunitario</option>
-                    <option value="Otro">Otro</option>
-                </select>
-                <label htmlFor="image">
-                    Agregar mi foto
+        <>
+            <form className='form' onChange={handleInputChange} onSubmit={handleSubmit}>
+                <h1 className='title'>Datos del líder</h1>
+                <hr />
+                <p className="paragraph">
+                    Por favor dilegencia la información solicitada, los campos con asteriscos, indican que no deben quedar en blanco
+                </p>
+                <div className="row">
+                    <p className="label">Cédula:</p>
+                    <input className='input-text' type="number" name="docIdent" placeholder="Cédula No." />
+                </div>
+                <div className="row">
+                    <p className="label">Dirección:</p>
+                    <input className='input-text' type="text" name="adress" placeholder="Dirección" />
+                </div>
+                <div className="row">
+                    <p className="label">Teléfono(s):</p>
+                    <input className='input-text' type="tel" name="phoneNumber" placeholder="Teléfono" />
+                </div>
+                <div className="row">
+                    <p className="label">Tipo de líder</p>
+                    <select name="leaderType" className='input-text' >
+                        <option value=""></option>
+                        <option value="Aspirante al concejo">Aspirante al concejo</option>
+                        <option value="Comunitario">Comunitario</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div className="row">
+                    <p className="label">Agregar mi foto</p>
                     <input type="file" name="image" placeholder="Foto" accept="image/*" />
-                </label>
-                <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit" disabled={handleValidate()}>Enviar</button>
+                </div>
+                <button className="button" type="submit" disabled={handleValidate()}>Enviar</button>
             </form>
-        </div>
+
+        </>
     )
 }
 export default CreateLeader;
