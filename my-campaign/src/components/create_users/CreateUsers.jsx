@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 import { useState } from 'react';
-import clienteAxios from  '../../config/axios';
+import clienteAxios from '../../config/axios';
 
 function CreateUser() {
     const [data, setData] = useState({
@@ -17,25 +17,24 @@ function CreateUser() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await clienteAxios.post('/api/users',data)
-        .then (res=>{
-            if (res.data.code === 11000) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Hubo un error',
-                    text: 'Usuario ya fue registrado...',
-                });
-            }else {
-                Swal.fire(
-                    'Usuario agregado corréctamente ',
-                    res.data.mensaje,
-                    'success',
-                );
-            }
-        })
-        
-    };
+        await clienteAxios.post('/api/users', data)
+            .then(res => {
+                if (res.data.code === 11000) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Hubo un error',
+                        text: 'Usuario ya fue registrado...',
+                    });
+                } else {
+                    Swal.fire(
+                        'Usuario agregado corréctamente ',
+                        res.data.mensaje,
+                        'success',
+                    );
+                }
+            })
 
+    };
 
     const handleValidate = () => {
         const { firstName, lastName, email } = data;
@@ -44,16 +43,28 @@ function CreateUser() {
     };
 
     return (
-        <div className='container mx-auto w-3/4 mt-5'>
-            <form className='shadow-lg shadow-blue-900 mt-5 border-red-300 w-[32rem] h-[30rem] mx-auto my-auto grid grid-col-1 gap-3 text-center p-5 rounded-lg' onSubmit={handleSubmit}>
-                <h1 className='shadow-md '>Registro de líderes</h1>
-                <input className='border rounded border-black p-1' name="firstName" type="text" placeholder="Primer nombre" onChange={handleChange}/>
-                <input className='border rounded border-black p-1' name="lastName" type="text" placeholder="Segundo nombre" onChange={handleChange}/>
-
-                <input className='border rounded border-black p-1' name="email" type="email" placeholder="Email" onChange={handleChange}/>
-                <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-2 m-2" type="submit" disabled={handleValidate()}>Enviar</button>
-            </form>
-        </div>
+        <>
+            <div form className='form' onSubmit={handleSubmit}>
+                <h1 className="title">Registro de líderes</h1>
+                <hr />
+                <p className="paragraph">
+                    Por favor dilegencia la información solicitada, los campos con asteriscos, indican que no deben quedar en blanco
+                </p>
+                <div className="row">
+                    <p className="label">Nombre del líder:</p>
+                    <input className='input-text' name="firstName" type="text" placeholder="Primer nombre" onChange={handleChange} />
+                </div>
+                <div className="row">
+                    <p className="label">Apellidos:</p>
+                    <input className='input-text' name="firstName" type="text" placeholder="Primer nombre" onChange={handleChange} />
+                </div>
+                <div className="row">
+                    <p className="label">Email:</p>
+                    <input className='input-text' name="email" type="email" placeholder="Email" onChange={handleChange} />
+                </div>
+                <button className="button" type="submit" disabled={handleValidate()}>Enviar</button>
+            </div>
+        </>
     )
 }
 export default CreateUser;
