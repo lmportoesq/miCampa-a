@@ -1,2 +1,2 @@
-# miCampaña
+# Mi Campaña
 Aplicativo para gestión de comandos políticos que permite ingresar y consultar las planillas de los votantes organizadas por líder, ciudad, municipios, veredas, barrios y sectores haciendo de manera automatica la respectiva verificacion de cédulas para evitar cruces entre sus líderes, obteniendo así el aspirante y su equipo de trabajo una vision clara y concisa sobre la cantidad de simpatizantes de su campaña.
