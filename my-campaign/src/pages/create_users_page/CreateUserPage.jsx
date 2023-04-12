@@ -1,7 +1,7 @@
 import Footer from '../../components/footer/Footer';
 import GetHome from '../../components/get_home/GetHome';
 
-import CreateUsers from '../../components/CreateUsers';
+import CreateUsers from '../../components/create_users/CreateUsers';
 
 function CreateUserPage() {
     return (

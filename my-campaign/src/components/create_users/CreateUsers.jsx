@@ -1,7 +1,6 @@
 import Swal from 'sweetalert2';
 import { useState } from 'react';
-//import clienteAxios from  '../config/axios';
-import { createUser } from '../services/users';
+import clienteAxios from  '../../config/axios';
 
 function CreateUser() {
     const [data, setData] = useState({
@@ -16,7 +15,7 @@ function CreateUser() {
         });
     };
 
-    /*const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         await clienteAxios.post('/api/users',data)
         .then (res=>{
@@ -35,29 +34,7 @@ function CreateUser() {
             }
         })
         
-    }; */
-
-    const fetchCreateUser = async () => {
-        const response = await createUser(data);
-        if (response.code === 11000) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Hubo un error',
-            text: 'Usuario ya fue registrado...!',
-          });
-        } else {
-          Swal.fire(
-            'Registro exitoso ',
-            'Se ha enviado un email a su correo para la confirmación de su registro',
-            'success',
-          );
-        }
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        fetchCreateUser();
-      };
+    };
 
 
     const handleValidate = () => {
