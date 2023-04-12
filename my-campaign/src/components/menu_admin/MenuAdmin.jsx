@@ -5,7 +5,7 @@ function MenuAdmin() {
         window.location.href = '/create-campaign';
     }
     function handleClickLeader() {
-        window.location.href = '/create-user'
+        window.location.href = 'create-user'
     }
     function handleClickListLeaders() {
         window.location.href = '/query-leader'
