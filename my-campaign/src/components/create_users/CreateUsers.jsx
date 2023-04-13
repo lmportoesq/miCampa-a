@@ -43,7 +43,7 @@ function CreateUser() {
 
     return (
         <>
-            <form className='form' onSubmit={handleSubmit}>
+            <div form className='form' onSubmit={handleSubmit}>
                 <h1 className="title">Registro de líderes</h1>
                 <hr />
                 <p className="paragraph">
@@ -63,6 +63,7 @@ function CreateUser() {
                 </div>
                 <button className="button" type="submit" disabled={handleValidate()}>Enviar</button>
             </form>
+
         </>
     )
 }
