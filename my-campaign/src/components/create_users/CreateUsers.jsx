@@ -25,7 +25,6 @@ function CreateUser() {
         e.preventDefault();
         await clienteAxios.post('/api/users',data)
         .then (res=>{
-            console.log('RESULTTAAOO ES',res)
             if (res.data.code === 11000) {
                 Swal.fire({
                     icon: 'error',
@@ -34,15 +33,12 @@ function CreateUser() {
                 });
             }else {
                 Swal.fire(
-                    'Usuario agregado corréctamente ',
+                    'Usuario agregado corréctamente, se ha enviado un correo para su activación.',
                     res.data.mensaje,
                     'success',
                 );
             }
-        })
-        .catch(error=>{
-            console.log(error)
-        })
+        });
     }
 
     return (
