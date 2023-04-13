@@ -3,8 +3,6 @@ import Footer from '../../components/footer/Footer';
 import clienteAxios from '../../config/axios';
 import { useEffect, useState } from 'react';
 
-//import 'bootstrap/dist/css/bootstrap.min.css'
-
 function FollowersPage() {
     const [data, setData] = useState([]);
     const idLeader = localStorage.getItem('id');

@@ -15,32 +15,31 @@ function CreateUser() {
         });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        await clienteAxios.post('/api/users', data)
-            .then(res => {
-                if (res.data.code === 11000) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Hubo un error',
-                        text: 'Usuario ya fue registrado...',
-                    });
-                } else {
-                    Swal.fire(
-                        'Usuario agregado corréctamente ',
-                        res.data.mensaje,
-                        'success',
-                    );
-                }
-            })
-
-    };
-
     const handleValidate = () => {
         const { firstName, lastName, email } = data;
         const valido = !firstName.length || !lastName.length || !email.length;
         return valido;
-    };
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await clienteAxios.post('/api/users',data)
+        .then (res=>{
+            if (res.data.code === 11000) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Hubo un error',
+                    text: 'Usuario ya fue registrado...',
+                });
+            }else {
+                Swal.fire(
+                    'Usuario agregado corréctamente, se ha enviado un correo para su activación.',
+                    res.data.mensaje,
+                    'success',
+                );
+            }
+        });
+    }
 
     return (
         <>
@@ -52,18 +51,19 @@ function CreateUser() {
                 </p>
                 <div className="row">
                     <p className="label">Nombre del líder:</p>
-                    <input className='input-text' name="firstName" type="text" placeholder="Primer nombre" onChange={handleChange} />
+                    <input className='input-text' name="firstName" type="text" placeholder="Ingrese nombre" onChange={handleChange} />
                 </div>
                 <div className="row">
                     <p className="label">Apellidos:</p>
-                    <input className='input-text' name="firstName" type="text" placeholder="Primer nombre" onChange={handleChange} />
+                    <input className='input-text' name="lastName" type="text" placeholder="Ingrese apellidos" onChange={handleChange} />
                 </div>
                 <div className="row">
                     <p className="label">Email:</p>
                     <input className='input-text' name="email" type="email" placeholder="Email" onChange={handleChange} />
                 </div>
                 <button className="button" type="submit" disabled={handleValidate()}>Enviar</button>
-            </div>
+            </form>
+
         </>
     )
 }

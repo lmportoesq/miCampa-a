@@ -1,13 +1,13 @@
 import Footer from '../../components/footer/Footer';
 import GetHome from '../../components/get_home/GetHome';
 
-import CreateLeaderPage from '../../components/CreateLeaders';
+import CreateLeaders from '../../components/create_leaders/CreateLeaders';
 
 function CreateLeader() {
     return (
-        <div className='container mx-auto'>
+        <div className='main'>
             <GetHome />
-            <CreateLeaderPage />
+            <CreateLeaders />
             <Footer />
         </div>
     )    
