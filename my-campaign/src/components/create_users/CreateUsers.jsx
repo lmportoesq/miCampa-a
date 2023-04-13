@@ -43,7 +43,7 @@ function CreateUser() {
 
     return (
         <>
-            <div form className='form' onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <h1 className="title">Registro de líderes</h1>
                 <hr />
                 <p className="paragraph">
