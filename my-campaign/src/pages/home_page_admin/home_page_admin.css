@@ -26,13 +26,7 @@
     height: 447px;
   
     border: 1px solid #000000;
-    filter: drop-shadow(0px 4px 4px rgba(142, 138, 138, 0.25));
+    box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
     border-radius: 16px;
-    
-    /* Inside auto layout */
-  
-      flex: none;
-      order: 0;
-      flex-grow: 1;
   }
   

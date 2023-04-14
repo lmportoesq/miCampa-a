@@ -45,7 +45,7 @@ function Login() {
 
             if (response.status === 200) {
                 localStorage.setItem('token', token);
-                localStorage.setItem('profile', profile);
+                localStorage.setItem('profile', JSON.stringify(profile));
                 localStorage.setItem('id', id);
 
                 Swal.fire(
@@ -53,7 +53,7 @@ function Login() {
                     'Usuario autenticado corréctamente...!',
                     'success',
                 );
-
+                    
                 if (profile.role === 'owner') {
                     window.location.href = '/home-owner';
                 } else if (profile.role === 'admin') {
