@@ -3,7 +3,7 @@ import MenuUsers from '../../components/MenuUsers';
 import logo from '../../images/Logo.jpg';
 
 function HomePageUser() {
-    console.log('EStoy en la home de USER')
+
     return (
         <>
             <MenuUsers />

@@ -4,15 +4,15 @@ import clienteAxios from '../../config/axios';
 
 function CreateLeader() {
     const formData = new FormData();
-    const userID = localStorage.getItem('id');
+
     const [data, setData] = useState({
         docIdent: '',
         leaderType: '',
         phoneNumber: '',
         adress: '',
         photo: '',
-        user: userID
     });
+ 
 
     const handleValidate = () => {
         const { docIdent, leaderType, phoneNumber, adress } = data;

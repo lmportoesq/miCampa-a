@@ -1,0 +1,6 @@
+.form-welcome {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background: #eff0f1;
+}
