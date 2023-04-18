@@ -3,11 +3,15 @@ import { useState } from 'react';
 import clienteAxios from '../../config/axios';
 
 function CreateUser() {
+    const profile=JSON.parse(localStorage.getItem('profile'));
+
     const [data, setData] = useState({
         firstName: '',
         lastName: '',
         email: '',
+        campaign:profile.campaign_id
     });
+
     const handleChange = (e) => {
         setData({
             ...data,

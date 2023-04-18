@@ -5,6 +5,7 @@ import '../home_page_admin/home_page_admin.css';
 
 function HomePageAdmin() {
    const profile=JSON.parse(localStorage.getItem('profile'));
+   console.log('ESTE ES MI PROFILE...',profile)
     return (
         <>
             <MenuAdmin />

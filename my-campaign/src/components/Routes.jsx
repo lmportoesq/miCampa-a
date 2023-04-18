@@ -11,6 +11,7 @@ import Leaders from '../components/Leaders';
 import FollowersPage from '../pages/followers_page/FollowersPage';
 import RejectedPage from  '../pages/rejected_page/RejectedPage';
 import ActivePage from  '../pages/active_page/ActivePage';
+import WelcomePage  from '../pages/welcome_page/WelcomePage';
 
 function Router() {
     return (
@@ -28,6 +29,7 @@ function Router() {
                 <Route path='/query-followers' element={<FollowersPage />} />
                 <Route path='/query-rejected' element={<RejectedPage />} />
                 <Route path='/active/:hash' element={<ActivePage />} />
+                <Route path='/welcome-page' element={<WelcomePage />} />
             </Routes>
         </BrowserRouter>
     )
