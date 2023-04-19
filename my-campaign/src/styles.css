@@ -67,6 +67,7 @@ code {
 
   background: #FFFFFF;
   border: 2px solid #4A0243;
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
   border-radius: 8px;
 }
 
