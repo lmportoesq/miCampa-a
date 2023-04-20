@@ -7,7 +7,7 @@ import CreateUsersPage from '../pages/create_users_page/CreateUserPage';
 import CreateFollowerPage from '../pages/create_followers_page/CreateFollowersPage';
 import LoginPage from '../pages/login_page/LoginPage';
 import LeadersList from '../components/leaders_list/LeadersList';
-import FollowersPage from '../pages/followers_page/FollowersPage';
+import FollowersList from '../components/followers_list/FollowersList';
 import RejectedPage from  '../pages/rejected_page/RejectedPage';
 import ActivePage from  '../pages/active_page/ActivePage';
 import WelcomePage  from '../pages/welcome_page/WelcomePage';
@@ -24,7 +24,7 @@ function Router() {
                 <Route path='/create-user' element={<CreateUsersPage />} />
                 <Route path='/create-follower' element={<CreateFollowerPage />} />
                 <Route path='/query-leader' element={<LeadersList />} />
-                <Route path='/query-followers' element={<FollowersPage />} />
+                <Route path='/query-followers' element={<FollowersList />} />
                 <Route path='/query-rejected' element={<RejectedPage />} />
                 <Route path='/active/:hash' element={<ActivePage />} />
                 <Route path='/welcome-page' element={<WelcomePage />} />

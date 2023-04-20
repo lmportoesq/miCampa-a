@@ -1,55 +1,22 @@
-import GetHome from '../../components/get_home/GetHome';
-import Footer from '../../components/footer/Footer';
-import clienteAxios from '../../config/axios';
-import { useEffect, useState } from 'react';
-
-function FollowersPage() {
-    const [data, setData] = useState([]);
-    const idLeader = localStorage.getItem('id');
-    const consultarAPI = async () => {
-        const consultaSeguidores = await clienteAxios.get(`/api/followers?leader=${idLeader}`)
-        const data = consultaSeguidores.data;
-        setData(data);
+function FollowersPage({ data }) {
+    function handleClick() {
+        alert('Diste clic en eliminar...')
     }
 
-    useEffect(() => {
-        consultarAPI();
-    }, []);
-
     return (
-        <div className='text-center mx-2'>
-            <GetHome />
-            <h1 className='shadow-md'>Listado de seguidores</h1>
-            <table className='table table-dark'>
-                <thead>
-                    <tr>
-                        <th>Cédula</th>
-                        <th>Nombre</th>
-                        <th>Dirección</th>
-                        <th>Teléfono</th>
-                        <th>Mesa</th>
-                        <th>|  Opciones  |</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((item) => (
-                        <tr>
-                            <td>{item.docIdent}</td>
-                            <td>{item.firstName} {item.lastName}</td>
-                            <td>{item.adress}</td>
-                            <td>{item.phoneNumber}</td>
-                            <td>{item.votingTable}</td>
-                            <td>
-                                <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-1 m-1" type="submit">Editar</button>
-                                <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold rounded p-1 m-1" type="submit">Eliminar</button>
-                            </td>
-                        </tr>
-                    ))};
-                </tbody>
-            </table>
-            <h2 className='text-right'>Total seguidores: {data.length}</h2>
-            <Footer />
-        </div>
+        <>
+            <div className="row-list">
+                <p className='text-list__bold'>{data.docIdent}</p>
+                <p className='text-list__bold'>{data.firstName} {data.lastName}</p>
+                <p className='text-list'>{data.adress}</p>
+                <p className='text-list'>{data.phoneNumber}</p>
+                <p className='text-list'>{data.votingTable}</p>
+                <div className='row-list__actions'>
+                    <ion-icon name="trash-outline" onClick={handleClick}></ion-icon>
+                    <ion-icon name="create-outline"></ion-icon>
+                </div>
+            </div>
+        </>
     )
 }
 export default FollowersPage;
