@@ -23,7 +23,6 @@ function CreateUser() {
             [e.target.name]: e.target.value,
 
         });
-       // handleValidate();
     };
 
     const handleValidate = () => {
@@ -58,7 +57,7 @@ function CreateUser() {
                 <h1 className="title">Registro de líderes</h1>
                 <hr />
                 <p className="paragraph">
-                    Por favor dilegencia la información solicitada, los campos con asteriscos, indican que no deben quedar en blanco
+                    Por favor diligencia la información solicitada, los campos con asteriscos, indican que no deben quedar en blanco.
                 </p>
                 <div className="row">
                     <p className="label">*Cédula:</p>

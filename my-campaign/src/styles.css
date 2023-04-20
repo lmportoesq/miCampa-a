@@ -192,7 +192,7 @@ code {
   border-radius: 8px;
 }
 
-.paper-sheet {
+.main-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,6 +209,16 @@ code {
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
 
 }
+
+.main-list__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+  width: 100%;
+  height: 240px;
+}
+
 
 .row-list {
   height: 50px;
