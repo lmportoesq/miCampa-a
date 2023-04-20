@@ -4,10 +4,9 @@ import HomePageAdmin from '../pages/home_page_admin/HomePageAdmin';
 import HomePageUser from '../pages/home_page_user/HomePageUser';
 import CampaignPage from '../pages/campaign_page/CampaignPage';
 import CreateUsersPage from '../pages/create_users_page/CreateUserPage';
-import CreateLeaderPage from '../pages/create_leaders_page/CreateLeaderPage';
 import CreateFollowerPage from '../pages/create_followers_page/CreateFollowersPage';
 import LoginPage from '../pages/login_page/LoginPage';
-import Leaders from '../components/Leaders';
+import LeadersList from '../components/leaders_list/LeadersList';
 import FollowersPage from '../pages/followers_page/FollowersPage';
 import RejectedPage from  '../pages/rejected_page/RejectedPage';
 import ActivePage from  '../pages/active_page/ActivePage';
@@ -23,9 +22,8 @@ function Router() {
                 <Route path='/home-user' element={<HomePageUser />} />
                 <Route path='/create-campaign' element={<CampaignPage />} />
                 <Route path='/create-user' element={<CreateUsersPage />} />
-                <Route path='/create-leader' element={<CreateLeaderPage />} />
                 <Route path='/create-follower' element={<CreateFollowerPage />} />
-                <Route path='/query-leader' element={<Leaders />} />
+                <Route path='/query-leader' element={<LeadersList />} />
                 <Route path='/query-followers' element={<FollowersPage />} />
                 <Route path='/query-rejected' element={<RejectedPage />} />
                 <Route path='/active/:hash' element={<ActivePage />} />

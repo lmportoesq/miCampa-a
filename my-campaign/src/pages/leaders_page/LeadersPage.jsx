@@ -1,15 +1,24 @@
-import './leader_page.css';
-import lider from '../../images/lider.png';
+import './leaders_page.css';
 
 function LeadersPage({ data }) {
+    function handleClick(){
+        alert('Diste clic en eliminar...')
+    }
     return (
-        <div className='main--big'>
-            <div className="card__leader">
-                <img className='card__leader--image' src={lider} alt='lider' />
-                <h3 className='h3'>{data.firstName} {data.lastName}</h3>
-                <p className='label'>Tipo de líder: {data.tipo}</p>
+        <>
+            <div className="row-leaders">
+                <p className='text-list__bold'>{data.docIdent}</p>
+                <p className='text-list__bold'>{data.firstName} {data.lastName}</p>
+                <p className='text-list'>{data.leaderType}</p>
+                <p className='text-list'>{data.adress}</p>
+                <p className='text-list'>{data.phoneNumber}</p>
+                <p className='text-list'>{data.email}</p>
+                <div className='row-leaders__actions'>
+                    <ion-icon name="trash-outline" onClick={handleClick}></ion-icon>
+                    <ion-icon name="create-outline"></ion-icon>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 export default LeadersPage;
