@@ -192,7 +192,7 @@ code {
   border-radius: 8px;
 }
 
-.paper-sheet {
+.main-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,6 +208,24 @@ code {
   margin-right: auto;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
 
+}
+
+.main-list__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+  width: 100%;
+  height: 240px;
+}
+
+.main-list__footer {
+  width: 100%;
+  padding: 0px 20px;
+  font-size: 25px;
+  font-weight: bolder;
+  color: #4A0243;
+  text-align: right;
 }
 
 .row-list {

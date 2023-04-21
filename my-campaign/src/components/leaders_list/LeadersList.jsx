@@ -1,4 +1,3 @@
-import './leader_list.css';
 import LeadersPage from '../../pages/leaders_page/LeadersPage';
 import clienteAxios from '../../config/axios';
 import { useEffect, useState } from 'react';
@@ -23,15 +22,15 @@ function Leaders() {
     return (
         <>
             <GetHome />
-            <div className='paper-sheet'>
+            <div className='main-list'>
                 <h1 className="title">Listado de líderes</h1>
                 <hr />
-                <div className="leaders-list">
+                <div className="main-list__container">
                     {data.map(item=>(
                     <LeadersPage key={item._id} data={item} />
                     ))};
                 </div>
-                <h2 className='subtitle'>Total líderes: {data.length}</h2>
+                <h2 className='main-list__footer'>Total líderes: {data.length}</h2>
             </div>
             <Footer />
         </>
