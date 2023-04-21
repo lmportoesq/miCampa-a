@@ -30,7 +30,7 @@ function Leaders() {
                     <LeadersPage key={item._id} data={item} />
                     ))};
                 </div>
-                <h2 className='subtitle'>Total líderes: {data.length}</h2>
+                <h2 className='main-list__footer'>Total líderes: {data.length}</h2>
             </div>
             <Footer />
         </>

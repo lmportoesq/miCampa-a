@@ -35,7 +35,7 @@ function FollowerList() {
                         <FollowersPage key={item._id} data={item} />
                     ))};
                 </div>
-                <h2 className='subtitle'>Total seguidores: {data.length}</h2>
+                <h2 className='main-list__footer'>Total seguidores: {data.length}</h2>
             </div>
             <Footer />
         </>

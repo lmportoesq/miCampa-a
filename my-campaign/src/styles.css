@@ -219,6 +219,14 @@ code {
   height: 240px;
 }
 
+.main-list__footer {
+  width: 100%;
+  padding: 0px 20px;
+  font-size: 25px;
+  font-weight: bolder;
+  color: #4A0243;
+  text-align: right;
+}
 
 .row-list {
   height: 50px;
