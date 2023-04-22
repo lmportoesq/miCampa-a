@@ -1,14 +1,16 @@
-import './create_campaign.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import clienteAxios from '../../config/axios';
 
 function CreateCampaign() {
+    const profile = JSON.parse(localStorage.getItem('profile'));
+    const id=profile.campaign_id;
+
     const [data, setData] = useState({
-        campaignType: '',
-        candidateName: '',
-        campaignSlogan: '',
-        campaignAdress: '',
+        campaignType:'',
+        candidateName:'',
+        campaignSlogan:'',
+        campaignAdress:''
     });
 
     const handleValidate = () => {
@@ -27,17 +29,14 @@ function CreateCampaign() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await clienteAxios.post('/api/campaigns', data)
-            console.log('La respuesta es...', res)
-            if (res.status === 201) {
+            const res = await clienteAxios.patch(`/api/campaigns/${id}`,data);
+            if (res.status === 200) {
                 Swal.fire(
                     'Se agregaron los datos de la campaña corréctamente ',
-                    res.data.mensaje,
                     'success',
                 );
             }
         } catch (error) {
-            saveRejected();
             Swal.fire({
                 icon: 'error',
                 title: 'Algo salió mal',
@@ -45,29 +44,39 @@ function CreateCampaign() {
             });
         }
     }
+    const consultarAPI=async ()=>{
+        const res=await clienteAxios.get(`/api/campaigns/${id}`);
+        const data = res.data;
+        setData(data);
+    }
+
+    useEffect(()=>{
+        consultarAPI();
+    },[]);
+
 
     return (
         <>
-            <div form className='form' onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <h1 className="title">Datos de la campaña</h1>
                 <p className="paragraph">
-                    Por favor dilegencia la información solicitada, los campos con asteriscos, indican que no deben quedar en blanco
+                    Por favor diligencia la información solicitada, los campos con asteriscos, indican que no deben quedar en blanco
                 </p>
                 <div className="row">
                     <p className="label">Nombre del candidato</p>
-                    <input className='input-text' type="text" name="candidateName" placeholder="Nombre del candidato" onChange={handleInputChange} />
+                    <input className='input-text' type="text" name="candidateName" value={data.candidateName} onChange={handleInputChange} />
                 </div>
                 <div className="row">
                     <p className="label">Slogan</p>
-                    <input className='input-text' type="text" name="campaignSlogan" placeholder="Slogan de la campaña" onChange={handleInputChange} />
+                    <input className='input-text' type="text" name="campaignSlogan" value={data.campaignSlogan} onChange={handleInputChange} />
                 </div>
                 <div className="row">
                     <p className="label">Dirección del comando</p>
-                    <input className='input-text' type="text" name="campaignAdress" placeholder="Dirección del comando" onChange={handleInputChange} />
+                    <input className='input-text' type="text" name="campaignAdress" value={data.campaignAdress} onChange={handleInputChange} />
                 </div>
                 <div className="row">
                     <p className="label">Tipo de campaña</p>
-                    <select name="campaignType" className='input-text' onChange={handleInputChange}>
+                    <select name="campaignType" className='input-text'value={data.campaignType} onChange={handleInputChange}>
                         <option value=""></option>
                         <option value="Alcaldía">Alcaldía</option>
                         <option value="Gobernación">Gobernación</option>
@@ -76,10 +85,8 @@ function CreateCampaign() {
                     </select>
                 </div>
                 <button className="button" type="submit" disabled={handleValidate()}>Enviar</button>
-            </div>
-
+            </form>
         </>
-
     )
 }
 export default CreateCampaign;
