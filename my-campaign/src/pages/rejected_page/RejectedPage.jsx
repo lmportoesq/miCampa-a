@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import GetHome from '../../components/get_home/GetHome'
 import Footer from '../../components/footer/Footer'
 import clienteAxios from '../../config/axios'

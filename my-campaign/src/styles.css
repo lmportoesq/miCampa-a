@@ -20,13 +20,15 @@ code {
 .title {
   font-size: 40px;
   font-weight: bold;
-  color: #4A0243;
+  color: #4a0243;
+  text-align: center;
+  margin: 10px;
 }
 
 .subtitle {
   font-size: 30px;
   font-weight: bolder;
-  color: #4A0243;
+  color: #4a0243;
 }
 
 .h3 {
@@ -37,7 +39,7 @@ code {
   font-size: 18px;
   line-height: 21px;
   text-align: center;
-  color: #4A0243;
+  color: #4a0243;
 }
 
 .text-list {
@@ -48,7 +50,7 @@ code {
   font-size: 14px;
   line-height: 21px;
   text-align: left;
-  color: #4A0243;
+  color: #4a0243;
 }
 
 .text-list__bold {
@@ -59,7 +61,7 @@ code {
   font-size: 14px;
   line-height: 21px;
   text-align: left;
-  color: #4A0243;
+  color: #4a0243;
   text-transform: capitalize;
 }
 
@@ -88,9 +90,9 @@ code {
   right: 30.65%;
   top: 15%;
 
-  background: #FFFFFF;
-  border: 2px solid #4A0243;
-  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+  background: #ffffff;
+  border: 2px solid #4a0243;
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
 }
 
@@ -113,7 +115,7 @@ code {
   width: 434px;
   height: 40px;
 
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #000000;
   border-radius: 8px;
 }
@@ -121,7 +123,6 @@ code {
 .label {
   width: 100%px;
   height: 22px;
-
 }
 
 .row {
@@ -149,14 +150,29 @@ code {
   margin-top: 20px;
 
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 10px 1px 10px 10px;
   gap: 10px;
 
+  background: #4a0243;
+  border-radius: 8px;
+}
 
-  background: #4A0243;
+.button__small {
+  width: 20%;
+  height: 44px;
+  color: white;
+  margin-top: 20px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  padding: 10px 1px 10px 10px;
+  gap: 10px;
+
+  background: #4a0243;
   border-radius: 8px;
 }
 
@@ -174,7 +190,6 @@ code {
 }
 
 .main--big {
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -187,7 +202,7 @@ code {
   left: 62px;
   top: 78px;
 
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #000000;
   border-radius: 8px;
 }
@@ -200,23 +215,24 @@ code {
   width: 90%;
   height: 750px;
 
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid black;
   border-radius: 8px;
   margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
-
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, 0.6);
 }
 
 .main-list__container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+
   padding: 20px;
   width: 100%;
   height: 240px;
+  margin-top: 40px;
+  margin-left: 10px;
 }
 
 .main-list__footer {
@@ -224,28 +240,23 @@ code {
   padding: 0px 20px;
   font-size: 25px;
   font-weight: bolder;
-  color: #4A0243;
+  color: #4a0243;
   text-align: right;
 }
 
 .row-list {
-  height: 50px;
+  height: 30px;
   width: 100%;
-  left: 20px;
-  top: 20px;
+
   margin-top: 5px;
   border-radius: 8px;
-  padding: 0px 10px 0px 10px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #dfdddd;
+  padding: 5px 5px 0px 0px;
+  border: 1px solid black;
+  gap: 5px;
 }
 
 .row-list:hover {
-  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, 0.6);
 }
 
 .row-list__actions {
@@ -259,5 +270,17 @@ code {
   width: 52px;
   height: 24px;
 
-  background: #FFFFFF;
+  background: #ffffff;
+}
+
+.row-list__Actions:hover {
+  background: red;
+}
+
+.icon-delete {
+  color: red;
+}
+
+.icon-edit {
+  color: blue;
 }
