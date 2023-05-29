@@ -1,57 +1,57 @@
-import Swal from 'sweetalert2';
-import { useState } from 'react';
-import clienteAxios from '../../config/axios';
+import Swal from 'sweetalert2'
+import { React, useState } from 'react'
+import clienteAxios from '../../config/axios'
 
-function CreateUser() {
-    const profile = JSON.parse(localStorage.getItem('profile'));
+function CreateUser () {
+  const profile = JSON.parse(localStorage.getItem('profile'))
 
-    const [data, setData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        campaign: profile.campaign_id,
-        docIdent: '',
-        leaderType: '',
-        phoneNumber: '',
-        adress: '',
-        photo: '',
-    });
+  const [data, setData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    campaign: profile.campaign_id,
+    docIdent: '',
+    leaderType: '',
+    phoneNumber: '',
+    adress: '',
+    photo: ''
+  })
 
-    const handleChange = (e) => {
-        setData({
-            ...data,
-            [e.target.name]: e.target.value,
+  const handleChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value
 
-        });
-    };
+    })
+  }
 
-    const handleValidate = () => {
-        const { firstName, lastName, email, docIdent, leaderType, phoneNumber, adress } = data;
-        const valido = !firstName.length || !lastName.length || !email.length || !docIdent.length || !leaderType.length || !phoneNumber.length || !adress.length;
-        return valido;
-    }
+  const handleValidate = () => {
+    const { firstName, lastName, email, docIdent, leaderType, phoneNumber, adress } = data
+    const valido = !firstName.length || !lastName.length || !email.length || !docIdent.length || !leaderType.length || !phoneNumber.length || !adress.length
+    return valido
+  }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        await clienteAxios.post('/api/users', data)
-            .then(res => {
-                if (res.data.code === 11000) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Hubo un error',
-                        text: 'Usuario ya fue registrado...',
-                    });
-                } else {
-                    Swal.fire(
-                        'Usuario agregado corréctamente, se ha enviado un correo para su activación.',
-                        res.data.mensaje,
-                        'success',
-                    );
-                }
-            });
-    }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await clienteAxios.post('/api/users', data)
+      .then(res => {
+        if (res.data.code === 11000) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Hubo un error',
+            text: 'Usuario ya fue registrado...'
+          })
+        } else {
+          Swal.fire(
+            'Usuario agregado corréctamente, se ha enviado un correo para su activación.',
+            res.data.mensaje,
+            'success'
+          )
+        }
+      })
+  }
 
-    return (
+  return (
         <>
             <form className='form' onSubmit={handleSubmit}>
                 <h1 className="title">Registro de líderes</h1>
@@ -97,6 +97,6 @@ function CreateUser() {
             </form>
 
         </>
-    )
+  )
 }
-export default CreateUser;
+export default CreateUser

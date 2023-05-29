@@ -1,19 +1,20 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePageOwner from '../pages/home_page_owner/HomePageOwner';
-import HomePageAdmin from '../pages/home_page_admin/HomePageAdmin';
-import HomePageUser from '../pages/home_page_user/HomePageUser';
-import CampaignPage from '../pages/campaign_page/CampaignPage';
-import CreateUsersPage from '../pages/create_users_page/CreateUserPage';
-import CreateFollowerPage from '../pages/create_followers_page/CreateFollowersPage';
-import LoginPage from '../pages/login_page/LoginPage';
-import LeadersList from '../components/leaders_list/LeadersList';
-import FollowersList from '../components/followers_list/FollowersList';
-import RejectedPage from  '../pages/rejected_page/RejectedPage';
-import ActivePage from  '../pages/active_page/ActivePage';
-import WelcomePage  from '../pages/welcome_page/WelcomePage';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePageOwner from '../pages/home_page_owner/HomePageOwner'
+import HomePageAdmin from '../pages/home_page_admin/HomePageAdmin'
+import HomePageUser from '../pages/home_page_user/HomePageUser'
+import CampaignPage from '../pages/campaign_page/CampaignPage'
+import CreateUsersPage from '../pages/create_users_page/CreateUserPage'
+import CreateFollowerPage from '../pages/create_followers_page/CreateFollowersPage'
+import LoginPage from '../pages/login_page/LoginPage'
+import LeadersList from '../components/leaders_list/LeadersList'
+import FollowersList from '../components/followers_list/FollowersList'
+import RejectedPage from '../pages/rejected_page/RejectedPage'
+import ActivePage from '../pages/active_page/ActivePage'
+import WelcomePage from '../pages/welcome_page/WelcomePage'
 
-function Router() {
-    return (
+function Router () {
+  return (
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<LoginPage />} />
@@ -30,6 +31,6 @@ function Router() {
                 <Route path='/welcome-page' element={<WelcomePage />} />
             </Routes>
         </BrowserRouter>
-    )
+  )
 }
-export default Router;
+export default Router

@@ -1,30 +1,30 @@
-import FollowersPage from '../../pages/followers_page/FollowersPage';
-import clienteAxios from '../../config/axios';
-import { useEffect, useState } from 'react';
-import GetHome from '../get_home/GetHome';
-import Footer from '../footer/Footer';
+import FollowersPage from '../../pages/followers_page/FollowersPage'
+import clienteAxios from '../../config/axios'
+import { React, useEffect, useState } from 'react'
+import GetHome from '../get_home/GetHome'
+import Footer from '../footer/Footer'
 
-function FollowerList() {
-    const [data, setData] = useState([]);
-    const idLeader = localStorage.getItem('id');
-    const profile = JSON.parse(localStorage.getItem('profile'));
-    let consultaSeguidores = {};
+function FollowerList () {
+  const [data, setData] = useState([])
+  const idLeader = localStorage.getItem('id')
+  const profile = JSON.parse(localStorage.getItem('profile'))
+  let consultaSeguidores = {}
 
-    const consultarAPI = async () => {
-        if (profile.role === 'leader') {
-            consultaSeguidores = await clienteAxios.get(`/api/followers?leader=${idLeader}`);
-        } else {
-            consultaSeguidores = await clienteAxios.get('/api/followers');
-        }
-        const data = consultaSeguidores.data;
-        setData(data);
+  const consultarAPI = async () => {
+    if (profile.role === 'leader') {
+      consultaSeguidores = await clienteAxios.get(`/api/followers?leader=${idLeader}`)
+    } else {
+      consultaSeguidores = await clienteAxios.get('/api/followers')
     }
-    
-    useEffect(() => {
-        consultarAPI();
-    }, []);
+    const data = consultaSeguidores.data
+    setData(data)
+  }
 
-    return (
+  useEffect(() => {
+    consultarAPI()
+  }, [])
+
+  return (
         <>
             <GetHome />
             <div className='main-list'>
@@ -39,6 +39,6 @@ function FollowerList() {
             </div>
             <Footer />
         </>
-    )
+  )
 }
-export default FollowerList;
+export default FollowerList

@@ -1,39 +1,38 @@
-import clienteAxios from '../../config/axios';
-import Swal from "sweetalert2";
+import clienteAxios from '../../config/axios'
+import Swal from 'sweetalert2'
 
-function LeadersPage({ data }) {
+function LeadersPage ({ data }) {
+  const confirmDelete = () => {
+    Swal.fire({
+      title: 'Eliminar',
+      text: '¿Esta seguro de eliminar el usuario?',
+      icon: 'warning',
+      showCancelButton: true,
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'No',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Si'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handlerDelete()
+      }
+    })
+  }
 
-    const confirmDelete = () => {
-        Swal.fire({
-            title: 'Eliminar',
-            text: "¿Esta seguro de eliminar el usuario?",
-            icon: 'warning',
-            showCancelButton: true,
-            cancelButtonColor: '#d33',
-            cancelButtonText: 'No',
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Si'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                handlerDelete();
-            }
-        })
+  const handlerDelete = async () => {
+    const id = data._id
+    try {
+      const res = await clienteAxios.delete(`/api/users/${id}`)
+      if (res.status === 200) {
+        window.location.reload()
+        // Swal.fire({ text: "Cliente se ha eliminado corréctamente...", icon: "success", timer: "3000" })
+      }
+    } catch (error) {
+      console.log(error)
     }
+  }
 
-    const handlerDelete = async () => {
-        const id = data._id;
-        try {
-            const res = await clienteAxios.delete(`/api/users/${id}`);
-            if (res.status === 200) {
-                window.location.reload();
-                //Swal.fire({ text: "Cliente se ha eliminado corréctamente...", icon: "success", timer: "3000" })
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    return (
+  return (
         <>
             <div className="row-list">
                 <p className='text-list__bold'>{data.docIdent}</p>
@@ -48,6 +47,6 @@ function LeadersPage({ data }) {
                 </div>
             </div>
         </>
-    )
+  )
 }
-export default LeadersPage;
+export default LeadersPage

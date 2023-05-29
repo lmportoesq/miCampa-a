@@ -1,9 +1,9 @@
-function FollowersPage({ data }) {
-    function handleClick() {
-        alert('Diste clic en eliminar...')
-    }
+function FollowersPage ({ data }) {
+  function handleClick () {
+    alert('Diste clic en eliminar...')
+  }
 
-    return (
+  return (
         <>
             <div className="row-list">
                 <p className='text-list__bold'>{data.docIdent}</p>
@@ -17,6 +17,6 @@ function FollowersPage({ data }) {
                 </div>
             </div>
         </>
-    )
+  )
 }
-export default FollowersPage;
+export default FollowersPage

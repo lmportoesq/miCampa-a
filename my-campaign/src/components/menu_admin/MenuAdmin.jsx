@@ -1,23 +1,23 @@
-import '../menu_admin/menu_admin.css';
+import '../menu_admin/menu_admin.css'
 
-function MenuAdmin() {
-    function handleClick() {
-        window.location.href = '/create-campaign';
-    }
-    function handleClickLeader() {
-        window.location.href = 'create-user'
-    }
-    function handleClickListLeaders() {
-        window.location.href = '/query-leader'
-    }
-    function handleClickListFollowers() {
-        window.location.href = '/query-followers'
-    }
-    function handleClickLogout() {
-        localStorage.removeItem('token');
-        window.location.href = '/';
-    }
-    return (
+function MenuAdmin () {
+  function handleClick () {
+    window.location.href = '/create-campaign'
+  }
+  function handleClickLeader () {
+    window.location.href = 'create-user'
+  }
+  function handleClickListLeaders () {
+    window.location.href = '/query-leader'
+  }
+  function handleClickListFollowers () {
+    window.location.href = '/query-followers'
+  }
+  function handleClickLogout () {
+    localStorage.removeItem('token')
+    window.location.href = '/'
+  }
+  return (
         <div className="main-nav">
             <div className="main-nav__list">
                 <button className="button-nav" type="submit" onClick={handleClick} >Datos de la campaña</button>
@@ -28,6 +28,6 @@ function MenuAdmin() {
                 <button className="button-nav" type="submit" onClick={handleClickLogout}>Salir</button>
             </div>
         </div>
-    )
+  )
 }
-export default MenuAdmin;
+export default MenuAdmin

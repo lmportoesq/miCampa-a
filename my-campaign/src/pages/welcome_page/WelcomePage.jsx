@@ -1,17 +1,17 @@
-import './welcome_page.css';
-import React from 'react';
-import logo from '../../images/Logo.jpg';
-import fondo from '../../images/fondo4.jpg';
-import { useNavigate } from 'react-router-dom';
+import './welcome_page.css'
+import React from 'react'
+import logo from '../../images/Logo.jpg'
+import fondo from '../../images/fondo4.jpg'
+import { useNavigate } from 'react-router-dom'
 
-function WelcomePage() {
-    const navigate=useNavigate();
+function WelcomePage () {
+  const navigate = useNavigate()
 
-    function handleClick(){
-        navigate('/create-leader');
-    }
+  function handleClick () {
+    navigate('/create-leader')
+  }
 
-    return (
+  return (
         <>
             <main className='main'>
                 <img src={fondo} alt='fondo' className="main__image" />
@@ -36,6 +36,6 @@ function WelcomePage() {
                 </div>
             </main>
         </>
-    )
+  )
 }
-export default WelcomePage;
+export default WelcomePage

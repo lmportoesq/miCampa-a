@@ -1,52 +1,51 @@
 import './create_campaign.css'
-import { useState } from "react";
-import Swal from "sweetalert2";
-import clienteAxios from '../../config/axios';
+import { React, useState } from 'react'
+import Swal from 'sweetalert2'
+import clienteAxios from '../../config/axios'
 
-function CreateCampaign() {
-    const [data, setData] = useState({
-        campaignType: '',
-        candidateName: '',
-        campaignSlogan: '',
-        campaignAdress: '',
-    });
+function CreateCampaign () {
+  const [data, setData] = useState({
+    campaignType: '',
+    candidateName: '',
+    campaignSlogan: '',
+    campaignAdress: ''
+  })
 
-    const handleValidate = () => {
-        const { campaignType, candidateName, campaignSlogan, campaignAdress } = data;
-        const valido = !campaignType.length || !candidateName.length || !campaignSlogan.length || !campaignAdress.length;
-        return valido;
-    };
+  const handleValidate = () => {
+    const { campaignType, candidateName, campaignSlogan, campaignAdress } = data
+    const valido = !campaignType.length || !candidateName.length || !campaignSlogan.length || !campaignAdress.length
+    return valido
+  }
 
-    const handleInputChange = (e) => {
-        setData({
-            ...data,
-            [e.target.name]: e.target.value,
-        });
+  const handleInputChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await clienteAxios.post('/api/campaigns', data)
+      console.log('La respuesta es...', res)
+      if (res.status === 201) {
+        Swal.fire(
+          'Se agregaron los datos de la campaña corréctamente ',
+          res.data.mensaje,
+          'success'
+        )
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Algo salió mal',
+        text: 'Error..'
+      })
     }
+  }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const res = await clienteAxios.post('/api/campaigns', data)
-            console.log('La respuesta es...', res)
-            if (res.status === 201) {
-                Swal.fire(
-                    'Se agregaron los datos de la campaña corréctamente ',
-                    res.data.mensaje,
-                    'success',
-                );
-            }
-        } catch (error) {
-            saveRejected();
-            Swal.fire({
-                icon: 'error',
-                title: 'Algo salió mal',
-                text: 'Error..',
-            });
-        }
-    }
-
-    return (
+  return (
         <>
             <div form className='form' onSubmit={handleSubmit}>
                 <h1 className="title">Datos de la campaña</h1>
@@ -80,6 +79,6 @@ function CreateCampaign() {
 
         </>
 
-    )
+  )
 }
-export default CreateCampaign;
+export default CreateCampaign

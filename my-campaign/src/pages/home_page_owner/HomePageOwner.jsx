@@ -1,10 +1,10 @@
-import Footer from '../../components/footer/Footer';
-import MenuOwner from '../../components/MenuOwner';
-import logo from '../../images/logo_campaña.svg';
+import Footer from '../../components/footer/Footer'
+import MenuOwner from '../../components/MenuOwner'
+import logo from '../../images/logo_campaña.svg'
 
-function HomePageOwner() {
-    console.log('EStoy en la home de OWNER')
-    return (
+function HomePageOwner () {
+  console.log('EStoy en la home de OWNER')
+  return (
         <>
             <MenuOwner />
             <div className='container h-[24rem] mx-auto'>
@@ -14,6 +14,6 @@ function HomePageOwner() {
             </div>
             <Footer />
         </>
-    )
+  )
 }
-export default HomePageOwner;
+export default HomePageOwner
