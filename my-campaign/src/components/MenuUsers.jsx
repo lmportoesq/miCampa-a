@@ -1,24 +1,25 @@
-function MenuUsers() {
-    function handleClickPersonal() {
-        window.location.href = '/create-leader';
-    }
-    function handleClickFollower() {
-        window.location.href = '/create-follower'
-    }
-    function handleClickListFollowers() {
-        window.location.href = '/query-followers'
-    }
+import React from 'react'
+function MenuUsers () {
+  function handleClickPersonal () {
+    window.location.href = '/create-leader'
+  }
+  function handleClickFollower () {
+    window.location.href = '/create-follower'
+  }
+  function handleClickListFollowers () {
+    window.location.href = '/query-followers'
+  }
 
-    function handleClickListRejected() {
-        window.location.href = '/query-rejected'
-    }
+  function handleClickListRejected () {
+    window.location.href = '/query-rejected'
+  }
 
-    function handleClickLogout() {
-        localStorage.removeItem('token');
-        window.location.href = '/';
-    }
+  function handleClickLogout () {
+    localStorage.removeItem('token')
+    window.location.href = '/'
+  }
 
-    return (
+  return (
         <div className="main-nav">
             <div className="main-nav__list">
                 <button className="button-nav" type="submit" onClick={handleClickPersonal} >Datos personales</button>
@@ -28,6 +29,6 @@ function MenuUsers() {
                 <button className="button-nav" type="submit" onClick={handleClickLogout}>Salir</button>
             </div>
         </div>
-    )
+  )
 }
-export default MenuUsers;
+export default MenuUsers

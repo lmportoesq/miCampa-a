@@ -1,10 +1,9 @@
-import Footer from '../../components/footer/Footer';
-import MenuUsers from '../../components/MenuUsers';
-import logo from '../../images/Logo.jpg';
+import Footer from '../../components/footer/Footer'
+import MenuUsers from '../../components/MenuUsers'
+import logo from '../../images/Logo.jpg'
 
-function HomePageUser() {
-
-    return (
+function HomePageUser () {
+  return (
         <>
             <MenuUsers />
             <div className='container h-[24rem] mx-auto'>
@@ -14,6 +13,6 @@ function HomePageUser() {
             </div>
             <Footer />
         </>
-    )
+  )
 }
-export default HomePageUser;
+export default HomePageUser

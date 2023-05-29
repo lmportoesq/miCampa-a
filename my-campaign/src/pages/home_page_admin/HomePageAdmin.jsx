@@ -1,11 +1,11 @@
-import Footer from '../../components/footer/Footer';
-import MenuAdmin from '../../components/menu_admin/MenuAdmin';
-import logo from '../../images/logo_campaña.svg';
-import '../home_page_admin/home_page_admin.css';
+import Footer from '../../components/footer/Footer'
+import MenuAdmin from '../../components/menu_admin/MenuAdmin'
+import logo from '../../images/logo_campaña.svg'
+import '../home_page_admin/home_page_admin.css'
 
-function HomePageAdmin() {
-   const profile=JSON.parse(localStorage.getItem('profile'));
-    return (
+function HomePageAdmin () {
+  const profile = JSON.parse(localStorage.getItem('profile'))
+  return (
         <>
             <MenuAdmin />
             <div className="container">
@@ -21,6 +21,6 @@ function HomePageAdmin() {
             </div>
             <Footer />
         </>
-    )
+  )
 }
-export default HomePageAdmin;
+export default HomePageAdmin

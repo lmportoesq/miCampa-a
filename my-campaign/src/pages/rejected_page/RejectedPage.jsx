@@ -1,24 +1,24 @@
-import GetHome from '../../components/get_home/GetHome';
-import Footer from '../../components/footer/Footer';
-import clienteAxios from '../../config/axios';
-import { useEffect, useState } from 'react';
+import GetHome from '../../components/get_home/GetHome'
+import Footer from '../../components/footer/Footer'
+import clienteAxios from '../../config/axios'
+import { useEffect, useState } from 'react'
 
-//import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
-function RejectedPage() {
-    const [data, setData] = useState([]);
-    const idLeader = localStorage.getItem('id');
-    const consultarAPI = async () => {
-        const consultaRechazados = await clienteAxios.get(`/api/rejecteds?leader=${idLeader}`)
-        const data = consultaRechazados.data;
-        setData(data);
-    }
+function RejectedPage () {
+  const [data, setData] = useState([])
+  const idLeader = localStorage.getItem('id')
+  const consultarAPI = async () => {
+    const consultaRechazados = await clienteAxios.get(`/api/rejecteds?leader=${idLeader}`)
+    const data = consultaRechazados.data
+    setData(data)
+  }
 
-    useEffect(() => {
-        consultarAPI();
-    }, []);
+  useEffect(() => {
+    consultarAPI()
+  }, [])
 
-    return (
+  return (
         <div className='text-center mx-2'>
             <GetHome />
             <h1 className='shadow-md'>Listado de rechazados</h1>
@@ -41,6 +41,6 @@ function RejectedPage() {
             <h2 className='text-right'>Total rechazados: {data.length}</h2>
             <Footer />
         </div>
-    )
+  )
 }
-export default RejectedPage;
+export default RejectedPage

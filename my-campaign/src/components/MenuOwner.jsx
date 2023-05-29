@@ -1,15 +1,15 @@
-function MenuOwner() {
-    function handleClickCampañas(){
-        window.location.href = '/create-campaign';
-    }
-    function handleClickRegAdmin(){
-        window.location.href = '/create-leader'
-    }
-    function handleClickLogout(){
-        localStorage.removeItem('token');
-        window.location.href = '/';
-    }
-    return (
+function MenuOwner () {
+  function handleClickCampañas () {
+    window.location.href = '/create-campaign'
+  }
+  function handleClickRegAdmin () {
+    window.location.href = '/create-leader'
+  }
+  function handleClickLogout () {
+    localStorage.removeItem('token')
+    window.location.href = '/'
+  }
+  return (
         <div className="main-nav">
             <div className="main-nav__list">
                 <button className="button-nav" type="submit" onClick={handleClickCampañas} >Datos de la campaña</button>
@@ -18,6 +18,6 @@ function MenuOwner() {
                 <button className="button-nav" type="submit" onClick={handleClickLogout}>Salir</button>
             </div>
         </div>
-    )
+  )
 }
-export default MenuOwner;
+export default MenuOwner
